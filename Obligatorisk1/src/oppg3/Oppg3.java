@@ -46,12 +46,16 @@ public class Oppg3 {
 					a.setAarslonn(nyLonn);
 				});
 		
-		System.out.println("\nNye sjefslønner: " + ansatte1.toString());
+		System.out.println("\nNye sjefslønner: ");
+		
+		for(Ansatt a : ansatte1) {
+			System.out.println(a.toString());
+		}
 		
 		boolean noenMerEnn800000 = ansatte1.stream()
 				.anyMatch(a -> a.getAarslonn() > 800000);
 		
-		System.out.println(noenMerEnn800000);
+		System.out.println("\n" + noenMerEnn800000 + "\n");
 		
 		ansatte1.stream()
 			.forEach(a -> {
