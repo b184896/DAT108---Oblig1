@@ -1,6 +1,7 @@
 package oppg3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -10,19 +11,14 @@ import oppg2.Kjonn;
 public class Oppg3 {
 	
 	public static void main(String[] args) {
-		Ansatt a1 = new Ansatt("Ann", "test1", Kjonn.Kvinne, "blabla sjef", 700000);
-		Ansatt a2 = new Ansatt("Bob", "test2", Kjonn.Mann, "Direktør", 1000000);
-		Ansatt a3 = new Ansatt("Cris", "test3", Kjonn.Mann, "tull sjef", 200000);
-		Ansatt a4 = new Ansatt("Dookie", "test4", Kjonn.Annet, "fikser", 300000);
-		Ansatt a5 = new Ansatt("Erba", "test5", Kjonn.Kvinne, "hopper", 450000);
-		
-		List<Ansatt> ansatte1 = new ArrayList<>();
-		ansatte1.add(a1);
-		ansatte1.add(a2);
-		ansatte1.add(a3);
-		ansatte1.add(a4);
-		ansatte1.add(a5);
-		
+		List<Ansatt> ansatte1 = new ArrayList<>(Arrays.asList(
+			    new Ansatt("Sigurd", "Ståløy", Kjonn.Mann, "Ingeniør", 850000),
+			    new Ansatt("Kari", "Nordmann", Kjonn.Kvinne, "Tester", 550000),
+			    new Ansatt("Alex", "Hansen", Kjonn.Annet, "Designer", 500000),
+			    new Ansatt("Lise", "Berg", Kjonn.Kvinne, "Sjef", 750000),
+			    new Ansatt("Jon", "Dahl", Kjonn.Mann, "Utvikler", 480000)
+			));
+
 		List<String> Ansatteetternavn = ansatte1.stream()
 				.map(a -> a.getEtternavn())
 				.toList();
