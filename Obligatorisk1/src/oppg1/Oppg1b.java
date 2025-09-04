@@ -2,36 +2,24 @@ package oppg1;
 
 import java.util.function.BiFunction;
 
-//Jeg skjønte ikke helt om jeg var ment til å definere nye bifunksjoner for hver av beregningene, men valgte å gå for det.
 
 public class Oppg1b {
 	
-	public static int beregn(int a, int b, BiFunction<Integer, Integer, Integer> funk) {
-		return funk.apply(a, b);
+	public static int beregn(int a, int b, BiFunction<Integer, Integer, Integer> operasjon) {
+		return operasjon.apply(a, b);
 	}
-	
+
 	public static void main(String[] args) {
+		int sum = beregn(12, 13, (a,b) -> a+b);
+		System.out.println("Summen av 12 og 13 er: " + sum);
 		
-		int sum = beregn(12, 13, (a, b) -> a + b);
-		System.out.println("Summer: " + sum);
+		int maks = beregn(-5, 3, (a,b) -> Math.max(a, b));
+		System.out.println("største av -5 og 3 er: " + maks);
 		
-		BiFunction<Integer, Integer, Integer> storste = (a, b) -> {
-			if(a > b) {
-				return a;
-			} else {
-				return b;
-			}
-		};
-		System.out.println("Største: " + beregn(-5, 3, storste));
-		
-		BiFunction<Integer, Integer, Integer> absVerdi = (a, b) -> {
-			int res = a - b;
-			if(res < 0) {
-				res = res*-1;
-			}
-			return res;
-		};
-		System.out.println("AbsVerdi: " + beregn(54, 45, absVerdi));
+		int lengde = beregn(54, 45, (a,b) -> Math.abs(a-b));
+		System.out.println("absolutt lengde mellom 54 og 45 er: " + lengde);
+	
 	}
 
 }
+

@@ -29,7 +29,7 @@ public class Oppg3 {
 				.filter(a -> a.getKjonn().equals("Kvinne"))
 				.count();
 		
-		System.out.println("Antall kvinner: " + antallKvinner);
+		System.out.println("\nAntall kvinner: " + antallKvinner);
 		
 		double LonnKvinner = ansatte1.stream()
 				.filter(a -> a.getKjonn().equals("Kvinne"))
@@ -37,7 +37,7 @@ public class Oppg3 {
 				.average()
 				.orElse(0);
 		
-		System.out.println("Gjennomsnittslønn for kvinner: " + LonnKvinner);
+		System.out.println("\nGjennomsnittslønn for kvinner: " + LonnKvinner);
 		
 		ansatte1.stream()
 				.filter(a -> a.getStilling().contains("sjef"))
@@ -46,7 +46,7 @@ public class Oppg3 {
 					a.setAarslonn(nyLonn);
 				});
 		
-		System.out.println("Nye sjefslønner: " + ansatte1.toString());
+		System.out.println("\nNye sjefslønner: " + ansatte1.toString());
 		
 		boolean noenMerEnn800000 = ansatte1.stream()
 				.anyMatch(a -> a.getAarslonn() > 800000);
@@ -67,12 +67,12 @@ public class Oppg3 {
 				.filter(a -> a.getAarslonn() == minLonn)
 				.toList();
 		
-		System.out.println("Ansatte med lavest lønn: " + ansatteMin.toString());
+		System.out.println("\nAnsatte med lavest lønn: " + ansatteMin.toString());
 		
 		int sum = IntStream.range(1, 1000)
 				.filter(i -> i%5 == 0 || i%3 == 0)
 				.sum();
 		
-		System.out.println("Sum av alle tall delelig med 5 eller 3 mellom 1 og 1000: " + sum);
+		System.out.println("\nSum av alle tall delelig med 5 eller 3 mellom 1 og 1000: " + sum);
 	}
 }
